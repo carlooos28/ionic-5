@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BiciUsersService } from '../services/bici-users.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  
+  users: any[] = [];
 
-  constructor() {}
+  constructor(private usersService: BiciUsersService) {}
+
+  ionViewDidEnter(){
+    this.usersService.getNewUsers().then((newUsers) => {
+      this.users = newUsers.data;
+      console.log(newUsers.data);
+    });
+  }
 
 }

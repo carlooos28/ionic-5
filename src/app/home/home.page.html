@@ -1,14 +1,12 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content padding>
+  <ul *ngIf="users.length">
+    <h3>Lista de Estudiantes</h3>
+    <li *ngFor="let user of users" >
+      Email: {{user.email}}
+      <br>
+      Nombre: {{user.first_name}} {{user.last_name}}
+      <br>
+      <img [src]="user.avatar" alt="{{user.first_name}}">
+    </li>
+  </ul>
 </ion-content>

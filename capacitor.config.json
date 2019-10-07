@@ -1,0 +1,7 @@
+{
+  "appId": "appmusic.co1",
+  "appName": "appmusic",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}
